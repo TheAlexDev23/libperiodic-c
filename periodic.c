@@ -1,17 +1,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include <sys/stat.h>>
+#include <sys/stat.h>
 
 #include "periodic.h"
 #include "element.h"
 
 periodic_element_t* periodic_get_element(int num)
 {
-    FILE *fp = fopen("Periodic-Table-JSON/PeriodicTableJSON.json", "r");
+    char* fm = "Periodic-Table-JSON/PeriodicTableJSON.json";
+    FILE *fp = fopen(fm, "r");
+
     // Get the file size
     struct stat st;
-    if (stat("Periodic-Table-JSON/PeriodicTableJSON.json", &st))
+    if (stat(fm, &st))
     {
         fclose(fp);
         return NULL;
@@ -24,7 +26,9 @@ periodic_element_t* periodic_get_element(int num)
 
     fread(buffer, file_size, 1, fp);
     fclose(fp);
+
     periodic_element_t* el = json_parse_element(num, buffer);
+
     free(buffer);
     return el;
 }
