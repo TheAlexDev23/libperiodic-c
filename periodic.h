@@ -26,7 +26,15 @@ typedef struct _periodic_element {
     periodic_element_conf_t conf;
 } periodic_element_t;
 
+/* Returns array of all elements */
+periodic_element_t** periodic_get_all_elements();
+
+/* Returns single element num */
 periodic_element_t* periodic_get_element(int num);
-void free_periodic_element(periodic_element_t* element);
+
+/* Frees a periodic_element_t allocated by periodic_get_element */
+void periodic_free_element(periodic_element_t* element);
+/* Frees array of elements alloacted by periodic_get_all_elements */
+void periodic_free_elements(periodic_element_t** elements);
 
 #endif
