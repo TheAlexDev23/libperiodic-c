@@ -10,7 +10,7 @@ typedef struct _periodic_element_conf {
     /* Length of shells */
     int shells_amnt;
     /* Number of electrons in each shell */
-    int shells[];
+    int shells[8];
     /* Strign representing electronic configuration */
     char* conf;
 } periodic_element_conf_t;
@@ -27,5 +27,6 @@ typedef struct _periodic_element {
 } periodic_element_t;
 
 periodic_element_t* periodic_get_element(int num);
+void free_periodic_element(periodic_element_t* element);
 
 #endif

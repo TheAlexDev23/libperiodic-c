@@ -1,5 +1,5 @@
-#ifndef _PERIODIC_JSON_H_INCLUDED
-#define _PERIODIC_JSON_H_INCLUDED
+#ifndef _PERIODIC_ELEMENT_H_INCLUDED
+#define _PERIODIC_ELEMENT_H_INCLUDED
 
 #include "periodic.h"
 
