@@ -8,7 +8,7 @@
 
 periodic_element_t** periodic_get_all_elements()
 {
-    periodic_element_t* elements[128];
+    periodic_element_t** elements = calloc(128, sizeof(periodic_element_t*));
 
     for (int i = 0; i < 128; i++)
     {
@@ -54,7 +54,7 @@ void periodic_free_element(periodic_element_t* element)
 
 void periodic_free_elements(periodic_element_t** elements)
 {
-    for (int i = 0; i < elements; i++)
+    for (int i = 0; i < 128; i++)
     {
         periodic_free_element(elements[i]);
     }
