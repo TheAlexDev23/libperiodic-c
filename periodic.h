@@ -26,7 +26,6 @@ typedef struct _periodic_element {
     periodic_element_conf_t conf;
 } periodic_element_t;
 
-char* periodic_source_location;
 
 void periodic_set_database(char* location);
 

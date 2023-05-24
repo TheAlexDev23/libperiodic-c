@@ -6,6 +6,8 @@
 #include "periodic.h"
 #include "element.h"
 
+char* periodic_source_location;
+
 void periodic_set_database(char* location)
 {
     periodic_source_location = location;
