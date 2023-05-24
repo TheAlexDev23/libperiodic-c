@@ -50,6 +50,11 @@ periodic_element_t* periodic_get_element(int num)
 
 void periodic_free_element(periodic_element_t* element)
 {
+    if (element == NULL)
+    {
+        return;
+    }
+    
     free(element->name);
     free(element->conf.conf);
     free(element);
