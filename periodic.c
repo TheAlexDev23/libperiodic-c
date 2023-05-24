@@ -23,6 +23,9 @@ periodic_element_t* periodic_get_element(int num)
     char* fm = "Periodic-Table-JSON/PeriodicTableJSON.json";
     FILE *fp = fopen(fm, "r");
 
+    if (fp == NULL)
+        return NULL;
+
     // Get the file size
     struct stat st;
     if (stat(fm, &st))
