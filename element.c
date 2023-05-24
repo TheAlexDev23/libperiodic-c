@@ -29,6 +29,7 @@ periodic_element_t* json_parse_element(int number, char* buffer)
         return NULL;
 
     json_object* name;
+    json_object* symbol;
 
     json_object* group;
     json_object* period;
@@ -40,6 +41,7 @@ periodic_element_t* json_parse_element(int number, char* buffer)
     json_object* electron_configuration;
 
     json_object_object_get_ex(element, "name", &name);
+    json_object_object_get_ex(element, "symbol", &symbol);
     json_object_object_get_ex(element, "group", &group);
     json_object_object_get_ex(element, "xpos", &posx);
     json_object_object_get_ex(element, "ypos", &posy);
@@ -47,6 +49,7 @@ periodic_element_t* json_parse_element(int number, char* buffer)
     json_object_object_get_ex(element, "electron_configuration", &electron_configuration);
 
     periodic_element->name = json_obj_to_string(name);
+    periodic_element->symbol = json_obj_to_string(symbol);
     periodic_element->group = json_object_get_int(group);
     periodic_element->period = json_object_get_int(period);
 

@@ -17,6 +17,7 @@ typedef struct _periodic_element_conf {
 
 typedef struct _periodic_element {
     char* name;
+    char* symbol;
     int number;
 
     int group;
