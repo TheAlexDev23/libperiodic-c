@@ -63,7 +63,7 @@ void periodic_free_element(periodic_element_t* element)
     }
     
     free(element->name);
-    free(element->symbol)
+    free(element->symbol);
     free(element->conf.conf);
     free(element);
 }
