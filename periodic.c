@@ -15,9 +15,9 @@ void periodic_set_database(char* location)
 
 periodic_element_t** periodic_get_all_elements()
 {
-    periodic_element_t** elements = calloc(128, sizeof(periodic_element_t*));
+    periodic_element_t** elements = calloc(118, sizeof(periodic_element_t*));
 
-    for (int i = 0; i < 128; i++)
+    for (int i = 0; i < 118; i++)
     {
         elements[i] = periodic_get_element(i);
     }
@@ -69,7 +69,7 @@ void periodic_free_element(periodic_element_t* element)
 
 void periodic_free_elements(periodic_element_t** elements)
 {
-    for (int i = 0; i < 128; i++)
+    for (int i = 0; i < 118; i++)
     {
         periodic_free_element(elements[i]);
     }
