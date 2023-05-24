@@ -6,6 +6,11 @@
 #include "periodic.h"
 #include "element.h"
 
+void periodic_set_database(char* location)
+{
+    periodic_source_location = location;
+}
+
 periodic_element_t** periodic_get_all_elements()
 {
     periodic_element_t** elements = calloc(128, sizeof(periodic_element_t*));
@@ -20,7 +25,7 @@ periodic_element_t** periodic_get_all_elements()
 
 periodic_element_t* periodic_get_element(int num)
 {
-    char* fm = "Periodic-Table-JSON/PeriodicTableJSON.json";
+    char* fm = periodic_source_location;
     FILE *fp = fopen(fm, "r");
 
     if (fp == NULL)
