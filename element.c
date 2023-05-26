@@ -56,7 +56,7 @@ periodic_element_t* json_parse_element(int number, char* buffer)
     periodic_element->pos.posX = json_object_get_int(posx) - 1;
     periodic_element->pos.posY = json_object_get_int(posy) - 1;
 
-    periodic_element->number = number;
+    periodic_element->number = number + 1;
 
     size_t shell_length = json_object_array_length(shells);
     periodic_element->conf.shells_amnt = (int)shell_length;
